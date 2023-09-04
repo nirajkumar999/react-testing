@@ -1,20 +1,9 @@
 import React from 'react'
 import DataTable from 'react-data-table-component'
-import '../App.css'
 
-import {
-    EllipsisVerticalIcon,
-    HomeIcon,
-    PencilSquareIcon,
-    TrashIcon,
-    NoSymbolIcon,
-    PlusSmallIcon
-} from "@heroicons/react/24/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faSqaurePlus, faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { Button } from 'react-bootstrap';
-
-
+import { faEye, faSquarePlus, faTrashCan,faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+import { Button} from 'react-bootstrap';
 
 
 const columns = [
@@ -25,10 +14,38 @@ const columns = [
     {
         name: 'Action',
         cell: row => <div>
-            <Button variant="outline-primary"><FontAwesomeIcon icon={faEye} className="hi-s me-2 mx-2" style={{ width: '21px', height: '21px'}}/></Button>&nbsp;
-            <Button variant="outline-primary"><PlusSmallIcon className="hi-s me-2 mx-2" style={{ width: '20px', height: '20px' }} /></Button>&nbsp;
-            <Button variant="outline-primary"><PencilSquareIcon className="hi-s me-2 mx-2" style={{ width: '20px', height: '20px' }} /></Button>&nbsp;
-            <Button variant="outline-primary"><TrashIcon className="hi-s me-2 mx-2" style={{ width: '20px', height: '20px' }} /></Button>
+            <Button variant="outline-primary" className='me-3'>
+            <FontAwesomeIcon 
+              icon={faEye}
+              className="hi-s me-2 mx-2"
+              style={{ width: '21px', height: '21px' }}
+              />
+            </Button>
+
+
+            <Button variant="outline-primary" className='me-3'>
+            <FontAwesomeIcon 
+              icon={faSquarePlus}
+              className="hi-s me-2 mx-2"
+              style={{ width: '21px', height: '21px' }}
+              />
+            </Button>
+            
+            <Button variant="outline-primary" className='me-3'>
+            <FontAwesomeIcon 
+              icon={faPenToSquare}
+              className="hi-s me-2 mx-2"
+              style={{ width: '21px', height: '21px' }}
+              />
+            </Button>
+
+            <Button variant="outline-primary" className='me-3'>
+            <FontAwesomeIcon 
+              icon={faTrashCan}
+              className="hi-s me-2 mx-2"
+              style={{ width: '21px', height: '21px' }}
+              />
+            </Button>
         </div>
     }
 ];
@@ -50,6 +67,7 @@ const data = [{
     "created_at": "2023-08-29T09:01:54.414Z",
     "updated_at": "2023-08-29T09:01:54.414Z"
 }]
+
 
 const Ministrytable = () => {
     return (
