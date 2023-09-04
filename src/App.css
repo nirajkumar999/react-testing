@@ -1,38 +1,20 @@
-.App {
-  text-align: center;
+.icon-container {
+  position: relative; /* Create a relative positioning context */
+  display: inline-block; /* Ensure the container only takes up as much space as needed */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hover-text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Background color for the text */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Adjust padding as needed */
+  border-radius: 5px; /* Add rounded corners to the text box */
+  display: none; /* Hide the text by default */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon-container:hover .hover-text {
+  display: block; /* Show the text when hovering over the icon-container */
 }
