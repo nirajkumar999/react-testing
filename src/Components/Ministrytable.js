@@ -1,9 +1,8 @@
 import React from 'react'
 import DataTable from 'react-data-table-component'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faSquarePlus, faTrashCan,faPenToSquare } from "@fortawesome/free-regular-svg-icons";
-import { Button} from 'react-bootstrap';
+import { faEye, faSquarePlus, faTrashCan, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+import HoverableButton from './HoverableButton';
 
 
 const columns = [
@@ -14,38 +13,11 @@ const columns = [
     {
         name: 'Action',
         cell: row => <div>
-            <Button variant="outline-primary" className='me-3'>
-            <FontAwesomeIcon 
-              icon={faEye}
-              className="hi-s me-2 mx-2"
-              style={{ width: '21px', height: '21px' }}
-              />
-            </Button>
+            <HoverableButton text="View" icon={faEye} />
+            <HoverableButton text="Add" icon={faSquarePlus} />
+            <HoverableButton text="Edit" icon={faPenToSquare} />
+            <HoverableButton text="Delete" icon={faTrashCan} />
 
-
-            <Button variant="outline-primary" className='me-3'>
-            <FontAwesomeIcon 
-              icon={faSquarePlus}
-              className="hi-s me-2 mx-2"
-              style={{ width: '21px', height: '21px' }}
-              />
-            </Button>
-            
-            <Button variant="outline-primary" className='me-3'>
-            <FontAwesomeIcon 
-              icon={faPenToSquare}
-              className="hi-s me-2 mx-2"
-              style={{ width: '21px', height: '21px' }}
-              />
-            </Button>
-
-            <Button variant="outline-primary" className='me-3'>
-            <FontAwesomeIcon 
-              icon={faTrashCan}
-              className="hi-s me-2 mx-2"
-              style={{ width: '21px', height: '21px' }}
-              />
-            </Button>
         </div>
     }
 ];
