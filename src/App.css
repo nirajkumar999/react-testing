@@ -1,0 +1,20 @@
+/* Custom CSS styles */
+.custom-data-table {
+    .rdt_TableRow {
+      /* Increase the row height */
+      height: 70px;
+      padding-top: 1px; /* Add top padding */
+      padding-bottom: 1px; /* Add bottom padding */
+    }
+  
+    .rdt_TableCell {
+      display: flex;
+      align-items: center;
+    }
+  
+    .custom-button {
+      /* Add padding to buttons */
+      padding-top: 5px;
+      padding-bottom: 50px;
+    }
+  }

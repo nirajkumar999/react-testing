@@ -28,7 +28,7 @@ const HoverableButton = ({ text, icon, variant }) => {
           <FontAwesomeIcon
             icon={icon}
             className="hi-s me-2 mx-2"
-            style={{ width: '21px', height: '21px' }}
+            style={{ width: '20px', height: '20px' }}
           />
         </Button>
       </OverlayTrigger>
