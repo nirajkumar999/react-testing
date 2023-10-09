@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Button, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Mymodal from './Mymodal';
 
 
-const HoverableButton = ({ text, icon, variant, body }) => {
+const HoverableButton2 = ({ text, icon, variant, body }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -33,19 +32,23 @@ const HoverableButton = ({ text, icon, variant, body }) => {
         </Button>
       </OverlayTrigger>
 
-      <Mymodal
-        show={show}
-        handleClose={handleClose}
-        title="Modal headingg"
-        body={body}
-      />
+      <Modal 
+      show={show} 
+      onHide={handleClose}
+      dialogClassName="modal-20w"
+      centered>
+
+    <Modal.Header closeButton>
+        <Modal.Title>{"Modal Heading"}</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>{body}</Modal.Body>
+    </Modal>
     </>
   );
 };
 
-export default HoverableButton;
+export default HoverableButton2;
 
-HoverableButton.defaultProps={
-  title:'',
+HoverableButton2.defaultProps={
   body:"Woohoo, you are reading this text in a modal!",
 }
