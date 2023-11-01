@@ -1,8 +1,10 @@
 import './App.css';
-import Ministrytable from './Components/Ministrytable';
+import Mycomponent from './Components/Mycomponent';
 function App() {
   return (
-     <Ministrytable/>
+    <div>
+     <Mycomponent/>
+    </div>
   );
 }
 
