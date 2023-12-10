@@ -36,7 +36,7 @@ const HoverableButton = ({ text, icon, variant, body }) => {
       <Mymodal
         show={show}
         handleClose={handleClose}
-        title="Modal headingg"
+        title="Modal heading"
         body={body}
       />
     </>

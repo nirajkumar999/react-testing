@@ -13,6 +13,11 @@ import Manage from './Manage';
             sortable: true
         },
         {
+          name: 'Ministry id',
+          selector: row => row.ministryid,
+          sortable: true
+      },
+        {
             name: 'Action',
             cell: row => <div>
                 <HoverableButton text="View" icon={faEye} variant="info" body={<Manage/>}/>
@@ -27,18 +32,21 @@ import Manage from './Manage';
         {
           "id": 1,
           "ministryname": "a",
+          "ministryid": "z@gmail.com",
           "created_at": "2023-08-29T09:01:54.414Z",
           "updated_at": "2023-08-29T09:01:54.414Z"
         },
         {
           "id": 2,
+          "ministryid": "y@gmail.com",
           "ministryname": "b",
           "created_at": "2023-08-29T09:01:54.414Z",
           "updated_at": "2023-08-29T09:01:54.414Z"
         },
         {
           "id": 3,
-          "ministryname": "v",
+          "ministryid": "x@gmail.com",
+          "ministryname": "c",
           "created_at": "2023-08-29T09:01:54.414Z",
           "updated_at": "2023-08-29T09:01:54.414Z"
         },
@@ -85,7 +93,7 @@ import Manage from './Manage';
                   
                   </div>
                 }
-                defaultSortFieldId={1}
+                defaultSortFieldId={2}
                 customStyles={{
                   rows: {
                     style: {
