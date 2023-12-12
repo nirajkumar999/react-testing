@@ -9,8 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 
+import { Form, FormGroup, Button } from 'react-bootstrap';
+
 const SimpleForm = () => {
-  const currentDate = new Date();
   const [startDate, setStartDate] = useState(null);
   const [submittedDate, setSubmittedDate] = useState(null);
   const [minTime, setMinTime] = useState(new Date());
@@ -18,25 +19,24 @@ const SimpleForm = () => {
   const handleDateChange = (date) => {
     setStartDate(date);
 
-    // Check if the selected date is today
-    if (isToday(date)) {
-      setMinTime(new Date()); // Set minTime to the current time
-    } else {
-      setMinTime(new Date(0, 0, 0, 0, 0)); // Set minTime to '00:00'
+    if (date !== null) {
+      if (isToday(date)) {
+        setMinTime(new Date());
+      } else {
+        setMinTime(new Date(0, 0, 0, 0, 0));
+      }
     }
   };
 
-  
   const isToday = (someDate) => {
     const today = new Date();
     return (
-      someDate!=null && 
+      someDate !== null &&
       someDate.getDate() === today.getDate() &&
       someDate.getMonth() === today.getMonth() &&
       someDate.getFullYear() === today.getFullYear()
     );
   };
-
 
   const formatDate = (date) => {
     try {
@@ -56,58 +56,44 @@ const SimpleForm = () => {
     }
   };
 
-
-  // const minTime = new Date();
-  // minTime.setSeconds(0); // Set seconds to 0 to align with the time intervals
-
-  // const maxTime = new Date();
-  // maxTime.setHours(23, 59, 59);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic
     setSubmittedDate(startDate);
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="startdatetime">Select Date and Time:</label>
-          <DatePicker
-            selected={startDate}
-            onChange={handleDateChange}
-            showIcon
-            todayButton="Today"
-            shouldCloseOnSelect={false}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            timeCaption={<FontAwesomeIcon icon={faClock} />}
-
-
-            dateFormat="dd/MM/yyyy HH:mm"
-            minDate={new Date()} // Restrict selection to future dates
-            // minTime={minTime}
-            // maxTime={maxTime}
-            minTime={minTime}
-            maxTime={new Date(0, 0, 0, 23, 59)}
-            placeholderText="Select Date and Time"
-            isClearable={true}
-            fixedHeight
-          />
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+    <Form onSubmit={handleSubmit}>
+      <FormGroup>
+        <Form.Label>Select Date and Time:</Form.Label>
+        <DatePicker
+          selected={startDate}
+          onChange={handleDateChange}
+          showIcon
+          todayButton="Today"
+          shouldCloseOnSelect={false}
+          showTimeSelect
+          timeFormat="HH:mm"
+          timeIntervals={15}
+          timeCaption={<FontAwesomeIcon icon={faClock} />}
+          dateFormat="dd/MM/yyyy HH:mm"
+          minDate={new Date()} // Restrict selection to future dates
+          minTime={minTime}
+          maxTime={new Date(0, 0, 0, 23, 59)}
+          placeholderText="Select Date and Time"
+          isClearable={true}
+          fixedHeight
+        />
+      </FormGroup>
+      <FormGroup>
+        <Button type="submit">Submit</Button>
+      </FormGroup>
       {submittedDate && (
         <div>
           <h2>Submitted Date and Time:</h2>
           <p>{formatDate(submittedDate)}</p>
         </div>
       )}
-    </div>
+    </Form>
   );
 };
 
