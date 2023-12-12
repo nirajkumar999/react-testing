@@ -1,8 +1,9 @@
 import './App.css';
-import Ministrytable from './Components/Ministrytable';
+import SimpleForm from './Components/SimpleForm';
+
 function App() {
   return (
-     <Ministrytable/>
+     <SimpleForm/>
   );
 }
 
